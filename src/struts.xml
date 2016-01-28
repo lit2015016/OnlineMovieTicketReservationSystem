@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="client" namespace="/client" extends="struts-default">
+		<action name="MovieSelectAction" 
+         class="actions.MovieSelectAction" method="displayMovies">
+	<result name="success">/jsp/index.jsp</result>
+   </action>
+  
+   <action name="TheatreSelectAction" 
+         class="actions.MovieSelectAction" method="displayMovies">
+	<result name="success">/jsp/Theatre.jsp</result>
+   </action>
+  
+   <action name="DateSelectAction" 
+         class="actions.ShowSelectAction" method="displaytheatre">
+	<result name="success">/jsp/Theatre.jsp</result>
+   </action>
+   
+    <action name="RateSelectAction" 
+         class="actions.RateSelectAction" method="displayrate">
+	<result name="success">/jsp/Rates.jsp</result>
+   </action>
+   
+    <action name="RateSelectAction1" 
+         class="actions.RateSelectAction" >
+	<result name="success">/jsp/Rates.jsp</result>
+   </action>
+   
+   <action name="RateSelectAction1" 
+         class="actions.RateSelectAction" >
+	<result name="success">/jsp/Rates.jsp</result>
+   </action>
+   
+    <action name="SeatSelectAction" 
+         class="actions.RateSelectAction" method="seatselection">
+	<result name="success">/jsp/SeatSelection.jsp</result>
+   </action>
+   
+    <action name="PaymentAction" 
+         class="actions.RateSelectAction" >
+	<result name="success">/jsp/Payment.jsp</result>
+   </action>
+   
+    <action name="SendEmailAction" 
+         class="actions.Emailer" method="booktickets">
+	<result name="success">/jsp/ThankYou.jsp</result>
+   </action>
+		
+	</package>
+	
+	<package name="server" namespace="/server" extends="struts-default">
+		<action name="ServerAction" 
+         class="actions.ServerAction" method="login">
+	<result name="success">/jsp/server/Login.jsp</result>
+	 </action>
+	 
+	 <action name="ServerActionValidate" 
+         class="actions.ServerAction" method="loginValidate">
+	<result name="success">/jsp/server/ScreenChooser.jsp</result>
+	<result name="error">/jsp/server/Login.jsp</result>
+	 </action>
+	 
+	 
+	   <action name="updateMovieInfo" 
+         class="actions.UpdateMovieInfo" >
+	<result name="success">/jsp/server/Update.jsp</result>
+	
+	 </action>
+	 
+	   <action name="updateMovieInfo1" 
+         class="actions.UpdateMovieInfo" method="UpdateMovieinfo">
+	<result name="success">/jsp/server/Update.jsp</result>
+	
+	 </action>
+	  <action name="logout" 
+         class="actions.UpdateMovieInfo" method="logout">
+	<result name="success">/jsp/server/Login.jsp</result>
+	
+	 </action>
+	 
+	  <action name="currentMovieInfo" 
+         class="actions.CurrentMovieInfo" method="currMovieInfo">
+	<result name="success">/jsp/server/Current.jsp</result>
+		 </action>
+		 
+	  <action name="currentMovieInfo1" 
+         class="actions.CurrentMovieInfo" method="currMovieModify">
+	<result name="success">/jsp/server/Current.jsp</result>
+		 </action>
+		 
+		  <action name="currentMovieInfo2" 
+         class="actions.CurrentMovieInfo" >
+	<result name="success">/jsp/server/FinalUpdate.jsp</result>
+		 </action>
+		 <action name="currentMovieInfo3" 
+         class="actions.CurrentMovieInfo" method="currMovieModified">
+	<result name="success">/jsp/server/FinalUpdate.jsp</result>
+		 </action>
+	
+	</package>
+	
+	
+	
+	<package name="itadmin" namespace="/itadmin" extends="struts-default">
+		<action name="Movieinfo" 
+         class="actions.ServerAction">
+	<result name="success">/jsp/MovieInfo.jsp</result>
+	
+	 </action>
+	  <action name="insertMovieInfo" 
+         class="actions.InsertMovieInfo" method="insertMovieInfo">
+	<result name="success">/jsp/MovieInfo.jsp</result>
+	
+	 </action>
+	 
+	
+	 
+		
+	</package>
+	
+	
+	
+	
+</struts>
